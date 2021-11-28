@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+</head>
+<body>
+    <form action="{{ url_for('edit') }}" method="POST">
+        <!-- Book ID is hidden on the page, but sent via POST request to edit() along with the new rating -->
+        <input hidden="hidden" name="id" value="{{book.id}}">
+        <!-- Visible items -->
+        <p>Book name: {{book.title}}</p>
+        <p>Current rating: {{book.rating}}</p>
+        <input name="rating" type="text" placeholder="new rating">
+        <button type="submit">Change rating</button>
+    </form>
+</body>
+</html>
